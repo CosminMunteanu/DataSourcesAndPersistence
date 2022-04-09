@@ -27,7 +27,7 @@ public class Schedule {
 
     private LocalDate date;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "schedule_employee",
             joinColumns = @JoinColumn(name = "schedule_id", referencedColumnName="id"),
             inverseJoinColumns = @JoinColumn(name = "employee_id", referencedColumnName="id", insertable = false, updatable = false)
